@@ -1,0 +1,67 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 var(--outer-margin);
+  /* intentionally no right-edge padding so last card is cropped */
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.controls {
+  display: flex;
+  gap: var(--space-2);
+  padding: 0 var(--outer-margin);
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: 1px solid currentColor;
+  color: currentColor;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.arrow:hover {
+  background-color: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+.arrow:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    scroll-behavior: auto;
+  }
+}

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { load as yamlLoad } from 'js-yaml'
 import { z } from 'zod'
 
 const contentDir = path.join(process.cwd(), 'content')
@@ -53,17 +54,15 @@ export type Issue = IssueFrontmatter
 
 // ── Loaders ────────────────────────────────────────────────────────────────
 
-export async function getCommittee(): Promise<CommitteeMember[]> {
-  const yaml = await import('js-yaml')
+export function getCommittee(): CommitteeMember[] {
   const raw = fs.readFileSync(path.join(contentDir, 'committee.yaml'), 'utf8')
-  const data = yaml.load(raw)
+  const data = yamlLoad(raw)
   return z.array(CommitteeMemberSchema).parse(data)
 }
 
-export async function getJournalTeam(): Promise<JournalTeamMember[]> {
-  const yaml = await import('js-yaml')
+export function getJournalTeam(): JournalTeamMember[] {
   const raw = fs.readFileSync(path.join(contentDir, 'journal-team.yaml'), 'utf8')
-  const data = yaml.load(raw)
+  const data = yamlLoad(raw)
   return z.array(JournalTeamMemberSchema).parse(data)
 }
 

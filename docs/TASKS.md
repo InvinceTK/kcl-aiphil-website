@@ -12,38 +12,45 @@ Source of truth: `docs/DESIGN_SPEC.md` (look and behaviour) and `brand-assets/sk
 ---
 
 ## Phase 0 — Plan (no code)
-- [ ] Read `docs/DESIGN_SPEC.md` in full, including section 4a (wireframes)
-- [ ] Look at the 4 references in `brand-assets/reference/` and the 2 sketches in `brand-assets/sketches/`
-- [ ] Summarise the references and sketches back in 5–8 bullets
-- [ ] Propose folder structure, content file formats + zod schemas, which components are client components, and build order
-- [ ] List conflicts or gaps between spec and sketches, plus questions
-- [ ] Wait for approval
+- [x] Read `docs/DESIGN_SPEC.md` in full, including section 4a (wireframes)
+- [x] Look at the 4 references in `brand-assets/reference/` and the 2 sketches in `brand-assets/sketches/`
+- [x] Summarise the references and sketches back in 5–8 bullets
+- [x] Propose folder structure, content file formats + zod schemas, which components are client components, and build order
+- [x] List conflicts or gaps between spec and sketches, plus questions
+- [x] Wait for approval
 
 ## Phase 1 — Foundation
-- [ ] Scaffold with create-next-app: App Router, TypeScript, ESLint, no Tailwind, no `src/` dir
-- [ ] `tokens.css`: colours, type scale, spacing, grid, rules
-- [ ] Fonts via `next/font/google`: Playfair Display, EB Garamond, Archivo variable with width axis (Latin + Greek subsets for Φ)
-- [ ] `lib/content.ts`: typed loader for `content/` (gray-matter + zod)
-- [ ] Grain texture overlay (< 30 KB) and `Grain` component
-- [ ] `app/layout.tsx`: skip link, landmarks, 12-column grid, square corners
-- [ ] `SiteHeader`: logo left, Home / Journal / other links right, hairline under the bar, oxblood Join button, mobile menu
-- [ ] Footer: wordmark, nav, socials, KCLSU line
-- [ ] `Button` (solid oxblood, outline hairline)
-- [ ] `Gear` SVG component (use vector from `brand-assets/` if present, else draw one)
-- [ ] `site.config.ts`: membership URL, socials, stats, fellowship status (all `TODO:`)
-- [ ] `app/styleguide/page.tsx` showing every token and component (exclude from sitemap)
-- [ ] Commit: "Phase 1: foundation"
+- [x] Scaffold with create-next-app: App Router, TypeScript, ESLint, no Tailwind, no `src/` dir
+- [x] `tokens.css`: colours, type scale, spacing, grid, rules
+- [x] Fonts via `next/font/google`: Playfair Display, EB Garamond, Archivo variable with width axis (Latin + Latin-ext subsets)
+- [x] `lib/content.ts`: typed loader for `content/` (gray-matter + zod)
+- [x] Grain texture overlay (SVG feTurbulence data URI, < 30 KB) and `Grain` component
+- [x] `app/layout.tsx`: skip link, landmarks, grain overlay, fonts
+- [x] `SiteHeader`: logo left, nav right, hairline rule, oxblood Join button, mobile full-screen overlay menu
+- [x] Footer: wordmark, nav, socials, KCLSU line
+- [x] `Button` (solid oxblood, outline hairline)
+- [x] `Gear` SVG component (drawn from scratch, 11-tooth cog, scroll-rotate prop)
+- [x] `Ticker` client component (CSS loop, pauses on hover/focus, prefers-reduced-motion)
+- [x] `StackedBand` client component (IntersectionObserver reveal, CSS fallback for reduced-motion)
+- [x] `SectionLabel`, `StatBlock` utility components
+- [x] `site.config.ts`: membership URL, socials, stats, fellowship status (all `TODO:`)
+- [x] `content/` stubs: committee.yaml, journal-team.yaml, events/, issues/
+- [x] `app/styleguide/page.tsx` showing every token and component (robots: noindex)
+- [x] lint + tsc + build: zero errors ✓
+- [x] Commit: "Phase 1: foundation" ✓
 
 ## Phase 2 — Home: `app/page.tsx` (follows sketch-home.jpg)
-- [ ] **Hero:** Bush House photo framed in the centre columns, greyscale + grain; Playfair headline overlapping the top edge of the photo; frame rules
-- [ ] **Who are we:** two zig-zag rows (image left / text right, then text left / image right); welcome copy from spec
-- [ ] **What do we do:** horizontal scroll-snap carousel of square cards (Debates, Workshops, Panels, Socials, Fellowship, Journal); last visible card cropped at the edge; arrow buttons; keyboard accessible
-- [ ] **The team:** 3 + 2 grid of greyscale headshots with role and name, from `committee` data (President, Vice-President, Head of TODO, Head of TODO, Head of Events)
-- [ ] `content/committee.yaml` + zod schema
-- [ ] Extra bands from spec, placed after the sketched sections: ticker, proof strip (Initiative of the Year 2026, 100+ attendance), Join CTA
-- [ ] Rotating gear on scroll, ticker loop, stacked-band reveal
+- [ ] **Hero:** Bush House photo framed in centre columns, greyscale + grain + dark overlay; Playfair headline overlapping the top edge; vertical frame rules either side; Join button + "See events" link
+- [ ] **Ticker band (oxblood):** DEBATE · WORKSHOPS · PANELS · FELLOWSHIP · UNPROMPTED scrolling strip
+- [ ] **Who are we:** two zig-zag rows (image left / text right, then text left / image right); first line large Playfair, rest body Archivo
+- [ ] **What do we do:** horizontal scroll-snap carousel of square cards (Debates, Workshops, Panels, Socials, Fellowship, Journal); last card cropped; arrow buttons; keyboard accessible (`Carousel` client component)
+- [ ] **The team:** 3 + 2 grid of greyscale headshots with role and name, from `committee.yaml`
+- [ ] **Proof strip (ink):** three `StatBlock`s — Initiative of the Year 2026, 100+ attendance, Journal + Fellowship
+- [ ] **Join CTA:** engraving-style background, frame rules, "Membership is now open", Join button
+- [ ] Rotating gear on scroll (Hero), ticker loop, stacked-band reveal
 - [ ] All motion off under `prefers-reduced-motion`
-- [ ] Only the carousel, gear and ticker are client components; everything else stays a Server Component
+- [ ] `Carousel` client component (added)
+- [ ] lint + tsc + build: zero errors
 - [ ] Commit: "Phase 2: home"
 
 ## Phase 3 — Journal: `app/journal/page.tsx` (follows sketch-journal.jpg)
@@ -53,14 +60,16 @@ Source of truth: `docs/DESIGN_SPEC.md` (look and behaviour) and `brand-assets/sk
 - [ ] **More issues coming!:** carousel of issue covers; unreleased issues show a "COMING" stacked-type placeholder
 - [ ] `content/issues/` files + zod schema (number, title, date, cover, pdf, released flag); PDFs and covers in `public/journal/`
 - [ ] Call for submissions block with external link
+- [ ] lint + tsc + build: zero errors
 - [ ] Commit: "Phase 3: journal"
 
 ## Phase 4 — Other pages
 - [ ] About: engraving hero, who we are, where we see AI (5 fields), two objectives, achievements
 - [ ] Events: `content/events/` Markdown files, type filter, upcoming / past split by date, external sign-up links
 - [ ] Fellowship: description, who it's for, status banner driven by config, register-interest link
-- [ ] Join: poster-style page, build-time QR code from membership URL, FAQ
+- [ ] Join: poster-style page (no QR for now), FAQ
 - [ ] 404 page
+- [ ] lint + tsc + build: zero errors
 - [ ] Commit: "Phase 4: other pages"
 
 ## Phase 5 — Polish and handover
@@ -71,16 +80,18 @@ Source of truth: `docs/DESIGN_SPEC.md` (look and behaviour) and `brand-assets/sk
 - [ ] `README.md`: run, build, deploy to Vercel
 - [ ] `CONTENT_GUIDE.md`: how to add an event, a committee member, a journal issue
 - [ ] Deploy to Vercel with preview deploys on pull requests
+- [ ] lint + tsc + build: zero errors
 - [ ] Commit: "Phase 5: polish and handover"
 
 ## Later (optional)
 - [ ] Per-essay web pages using the journal-spread template (MDX, footnotes, pull quotes, print stylesheet)
+- [ ] QR code on Join page (once KCLSU membership URL is confirmed)
 
 ---
 
 ## Blocked: needs committee
-- [ ] Bush House hero photo + permission to use it
-- [ ] Committee names, headshots and the two unclear "Head of" roles
+- [x] Bush House hero photo ✓ (received)
+- [ ] Committee names, headshots, and the two "Head of" role titles
 - [ ] Editor-in-Chief and Managing Editor names and photos
 - [ ] Issue 1 cover image and PDF
 - [ ] Milestones for the "What is Unprompted?" timeline
