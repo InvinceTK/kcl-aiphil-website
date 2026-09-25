@@ -63,13 +63,15 @@ Source of truth: `docs/DESIGN_SPEC.md` (look and behaviour) and `brand-assets/sk
 - [x] Commit: "Phase 3: journal" ✓
 
 ## Phase 4 — Other pages
-- [ ] About: engraving hero, who we are, where we see AI (5 fields), two objectives, achievements
-- [ ] Events: `content/events/` Markdown files, type filter, upcoming / past split by date, external sign-up links
-- [ ] Fellowship: description, who it's for, status banner driven by config, register-interest link
-- [ ] Join: poster-style page (no QR for now), FAQ
-- [ ] 404 page
-- [ ] lint + tsc + build: zero errors
-- [ ] Commit: "Phase 4: other pages"
+- [x] About: engraving hero, who we are, where we see AI (5 fields), two objectives, achievements
+- [x] Events: `content/events/` Markdown files, type filter, upcoming / past split by date, external sign-up links
+- [x] Fellowship: description, who it's for, status banner driven by config, register-interest link
+- [x] Join: poster-style page (no QR for now), FAQ
+- [x] 404 page
+- [x] `EventFilter` client component (added)
+- [x] `content/events/past-placeholder-event.md` placeholder past event (added)
+- [x] lint + tsc + build: zero errors ✓
+- [x] Commit: "Phase 4: other pages" ✓
 
 ## Phase 5 — Polish and handover
 - [ ] Metadata API titles/descriptions, `next/og` Open Graph images, favicon, `app/sitemap.ts`, `app/robots.ts`
