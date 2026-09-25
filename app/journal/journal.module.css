@@ -22,11 +22,33 @@
   min-height: calc(100svh - 5rem);
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+/* Background photo layer */
+.heroPhotoWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroPhoto {
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1) brightness(0.65);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--ink);
+  opacity: 0.55;
 }
 
 /* [UP] + volume row */
 .mastheadBar {
   border-bottom: 1px solid rgba(241, 239, 234, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .mastheadInner {
@@ -53,6 +75,8 @@
 .currentGrid {
   flex: 1;
   display: grid;
+  position: relative;
+  z-index: 1;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
   align-items: center;
@@ -104,6 +128,12 @@
 
 .coverImg {
   object-fit: cover;
+}
+
+/* Cover preview (unreleased — image shown, no PDF link) */
+.coverPreview {
+  position: absolute;
+  inset: 0;
 }
 
 /* ── Cover placeholder — echoes the journal cover ─────── */

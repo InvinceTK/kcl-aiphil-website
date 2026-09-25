@@ -20,26 +20,32 @@ const activities = [
   {
     label: 'Debates',
     description: 'Engaging thought and discussion on any dilemma in AI.',
+    image: '/images/home/debate.jpeg',
   },
   {
     label: 'Workshops',
     description: 'Hands-on learning with AI tools.',
+    image: '/images/home/workshop.jpeg',
   },
   {
     label: 'Panels',
     description: 'Expertise of researchers and practitioners.',
+    image: '/images/home/panel.png',
   },
   {
     label: 'Socials',
     description: 'Community beyond academic discussion.',
+    image: '/images/home/social.jpg',
   },
   {
     label: 'Fellowship',
     description: 'Guiding members towards real experience in AI safety.',
+    image: '/images/home/fellowship.jpg',
   },
   {
     label: '[UP] Journal',
     description: 'Open to all who want to write about AI and Philosophy.',
+    image: '/images/unprompted-cover.png',
   },
 ]
 
@@ -164,6 +170,14 @@ export default function Home() {
         <Carousel label="Our activities">
           {activities.map((a) => (
             <article key={a.label} className={styles.activityCard}>
+              <Image
+                src={a.image}
+                alt=""
+                fill
+                className={styles.activityImg}
+                sizes="(max-width: 768px) 90vw, 33vw"
+              />
+              <div className={styles.activityOverlay} aria-hidden="true" />
               <p className={styles.activityName}>{a.label}</p>
               <p className={styles.activityDesc}>{a.description}</p>
             </article>

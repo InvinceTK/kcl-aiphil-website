@@ -46,6 +46,19 @@ export default function JournalPage() {
       {/* ── 1. Current issue ──────────────────────────────────── */}
       <section className={styles.currentSection} aria-labelledby="current-issue-heading">
 
+        {/* Background photo: Somerset House, greyscale + dark overlay */}
+        <div className={styles.heroPhotoWrap} aria-hidden="true">
+          <Image
+            src="/images/journal/somerset-house.jpeg"
+            alt=""
+            fill
+            className={styles.heroPhoto}
+            priority
+            sizes="100vw"
+          />
+          <div className={styles.heroOverlay} />
+        </div>
+
         {/* [UP] masthead + volume label */}
         <div className={styles.mastheadBar}>
           <div className={styles.mastheadInner}>
@@ -83,7 +96,7 @@ export default function JournalPage() {
             )}
           </div>
 
-          {/* Cover — placeholder until real cover arrives */}
+          {/* Cover */}
           <div className={styles.coverWrap}>
             {currentIssue?.released && currentIssue.cover ? (
               <a
@@ -102,27 +115,15 @@ export default function JournalPage() {
                 />
               </a>
             ) : (
-              /* Styled placeholder that echoes the actual journal cover */
-              <div className={styles.coverPlaceholder} aria-label="Issue 1 cover — coming November 2026">
+              /* Cover preview — shown before release, no PDF link */
+              <div className={styles.coverPreview} aria-label="Unprompted Issue 1 cover — coming November 2026">
                 <Image
-                  src="/unprompted-logo-transparent.png"
-                  alt=""
-                  width={64}
-                  height={35}
-                  className={styles.coverUpMark}
-                  aria-hidden="true"
+                  src="/images/unprompted-cover.png"
+                  alt="Unprompted Issue 1 cover"
+                  fill
+                  className={styles.coverImg}
+                  sizes="(max-width: 768px) 90vw, 45vw"
                 />
-                <div className={styles.coverStackedBand} aria-hidden="true">
-                  <span className={styles.rowGhost}>PROMPTEDUNPROMPTED</span>
-                  <span className={styles.rowHighlight}>
-                    <span className={styles.rowLight}>PROMPTED</span>
-                    <span className={styles.rowBold}>UNPROMPTED</span>
-                  </span>
-                  <span className={styles.rowGhost}>PROMPTEDUNPROMPTED</span>
-                  <span className={styles.rowGhost}>PROMPTEDUNPROMPTED</span>
-                  <span className={styles.rowGhost}>PROMPTEDUNPROMPTED</span>
-                </div>
-                <p className={styles.coverVolLabel}>VOLUME 1 · 11.26</p>
               </div>
             )}
           </div>

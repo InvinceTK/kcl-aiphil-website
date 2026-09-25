@@ -260,6 +260,26 @@
   gap: var(--space-2);
   transition: border-color var(--transition-medium);
   cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.activityImg {
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1) brightness(0.55);
+  transition: transform var(--transition-medium);
+}
+
+.activityCard:hover .activityImg {
+  transform: scale(1.03);
+}
+
+.activityOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--ink);
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .activityCard:hover {
