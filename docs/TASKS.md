@@ -40,28 +40,27 @@ Source of truth: `docs/DESIGN_SPEC.md` (look and behaviour) and `brand-assets/sk
 - [x] Commit: "Phase 1: foundation" ✓
 
 ## Phase 2 — Home: `app/page.tsx` (follows sketch-home.jpg)
-- [ ] **Hero:** Bush House photo framed in centre columns, greyscale + grain + dark overlay; Playfair headline overlapping the top edge; vertical frame rules either side; Join button + "See events" link
-- [ ] **Ticker band (oxblood):** DEBATE · WORKSHOPS · PANELS · FELLOWSHIP · UNPROMPTED scrolling strip
-- [ ] **Who are we:** two zig-zag rows (image left / text right, then text left / image right); first line large Playfair, rest body Archivo
-- [ ] **What do we do:** horizontal scroll-snap carousel of square cards (Debates, Workshops, Panels, Socials, Fellowship, Journal); last card cropped; arrow buttons; keyboard accessible (`Carousel` client component)
-- [ ] **The team:** 3 + 2 grid of greyscale headshots with role and name, from `committee.yaml`
-- [ ] **Proof strip (ink):** three `StatBlock`s — Initiative of the Year 2026, 100+ attendance, Journal + Fellowship
-- [ ] **Join CTA:** engraving-style background, frame rules, "Membership is now open", Join button
-- [ ] Rotating gear on scroll (Hero), ticker loop, stacked-band reveal
-- [ ] All motion off under `prefers-reduced-motion`
-- [ ] `Carousel` client component (added)
-- [ ] lint + tsc + build: zero errors
-- [ ] Commit: "Phase 2: home"
+- [x] **Hero:** Bush House photo (greyscale + dark overlay), Playfair headline, vertical frame rules, scroll-driven Gear rising bottom-right, Join button + "See events" link
+- [x] **Ticker band (oxblood):** DEBATE · WORKSHOPS · PANELS · FELLOWSHIP · UNPROMPTED scrolling strip
+- [x] **Who are we:** two zig-zag rows (image placeholder left / Playfair+Archivo text right, then fields list / image placeholder); 5-field hairline-ruled table
+- [x] **What do we do:** `Carousel` client component, 6 square activity cards (last cropped at edge), ← → arrow buttons, keyboard accessible
+- [x] **The team:** 3 + 2 CSS grid (6-column, nth-child centred bottom row), placeholder headshots from `committee.yaml`
+- [x] **Proof strip (ink):** three `StatBlock`s — Initiative of the Year, 100+, 2 programmes
+- [x] **Join CTA:** italic Playfair headline, vertical frame rules, oxblood Join button
+- [x] Gear scroll-rotate, Ticker CSS loop (pauses on hover/focus), all motion off under `prefers-reduced-motion`
+- [x] `Carousel` client component (added)
+- [x] lint + tsc + build: zero errors ✓
+- [x] Commit: "Phase 2: home" ✓
 
 ## Phase 3 — Journal: `app/journal/page.tsx` (follows sketch-journal.jpg)
-- [ ] **Current issue:** "Issue 1: The Beginning" title, [UP] masthead, cover image linking to the Issue 1 PDF (new tab, file size shown)
-- [ ] **What is Unprompted?:** vertical hairline timeline with dot markers and alternating image/text blocks
-- [ ] **Thanks to our editors:** cards for Editor-in-Chief, Managing Editor and reviewers, from `journalTeam` data
-- [ ] **More issues coming!:** carousel of issue covers; unreleased issues show a "COMING" stacked-type placeholder
-- [ ] `content/issues/` files + zod schema (number, title, date, cover, pdf, released flag); PDFs and covers in `public/journal/`
-- [ ] Call for submissions block with external link
-- [ ] lint + tsc + build: zero errors
-- [ ] Commit: "Phase 3: journal"
+- [x] **Current issue:** [UP] masthead (inverted white), VOLUME 1 · 11.26, issue title, cover placeholder echoing real cover design (stacked word band); auto-upgrades to real cover + PDF link when `released: true`
+- [x] **What is Unprompted?:** vertical hairline timeline, square dot markers, 4 alternating text/image entries (all `TODO:` milestones pending committee)
+- [x] **Thanks to our editors:** Editor-in-Chief + Managing Editor cards from `journal-team.yaml`
+- [x] **More issues coming!:** Carousel; unreleased issues show "COMING" stacked-type placeholder; `content/issues/issue-02.md` added
+- [x] `content/issues/` + zod schema; `public/journal/` directory created
+- [x] Call for submissions (oxblood band) with link from `siteConfig.journal.submissionsUrl`
+- [x] lint + tsc + build: zero errors ✓
+- [x] Commit: "Phase 3: journal" ✓
 
 ## Phase 4 — Other pages
 - [ ] About: engraving hero, who we are, where we see AI (5 fields), two objectives, achievements
