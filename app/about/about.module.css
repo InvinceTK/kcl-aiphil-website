@@ -1,0 +1,390 @@
+/* =============================================================
+   About page styles
+   ============================================================= */
+
+.container {
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  padding: 0 var(--outer-margin);
+}
+
+/* Vertical hairline frame rules */
+.frameL,
+.frameR {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--paper);
+  opacity: 0.18;
+  pointer-events: none;
+}
+.frameL { left:  var(--outer-margin); }
+.frameR { right: var(--outer-margin); }
+
+/* ── 1. Hero ──────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: calc(100svh - 5rem);
+  background-color: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-12) var(--outer-margin);
+  width: 100%;
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.heroHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  color: var(--paper);
+  line-height: 1.05;
+  max-width: 14ch;
+}
+
+.heroSub {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--paper-dim);
+  max-width: none;
+}
+
+.heroGear {
+  position: absolute;
+  bottom: -30%;
+  right: -5%;
+  z-index: 1;
+  color: var(--paper);
+  opacity: 0.1;
+}
+
+/* ── 2. Who we are ────────────────────────────────────────── */
+.whoSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+}
+
+.whoHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: var(--space-4) 0 var(--space-8);
+  max-width: 24ch;
+}
+
+.whoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.whoBody {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+/* ── 3. Five fields ───────────────────────────────────────── */
+.fieldsSection {
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: var(--space-16) 0;
+}
+
+.fieldsHeadline {
+  font-family: var(--font-sans);
+  font-size: var(--text-h2);
+  font-weight: 900;
+  font-variation-settings: 'wdth' 125;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+  line-height: 1;
+  margin: var(--space-4) 0 var(--space-8);
+}
+
+.fieldList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(241, 239, 234, 0.12);
+}
+
+.fieldItem {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-6);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid rgba(241, 239, 234, 0.12);
+  align-items: baseline;
+}
+
+.fieldIndex {
+  font-family: var(--font-sans);
+  font-size: var(--text-h3);
+  font-weight: 900;
+  font-variation-settings: 'wdth' 125;
+  color: var(--paper);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.fieldText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.fieldName {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--grey-500);
+  max-width: none;
+}
+
+.fieldQuestion {
+  font-family: var(--font-serif);
+  font-size: var(--text-h4);
+  font-style: italic;
+  color: var(--paper);
+  line-height: 1.35;
+  max-width: 60ch;
+}
+
+/* ── 4. Two objectives ────────────────────────────────────── */
+.objectivesSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+  border-top: 1px solid rgba(14, 14, 14, 0.1);
+}
+
+.objectivesHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: var(--space-4) 0 var(--space-8);
+}
+
+.objectivesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  border-top: 1px solid var(--ink);
+}
+
+.objectiveCard {
+  padding-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.objectiveNumber {
+  font-family: var(--font-sans);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  font-variation-settings: 'wdth' 125;
+  color: var(--ink);
+  opacity: 0.08;
+  line-height: 1;
+}
+
+.objectiveTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4);
+  font-weight: 800;
+  font-variation-settings: 'wdth' 125;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.objectiveBody {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.7;
+  max-width: 48ch;
+}
+
+/* ── 5. Committee ─────────────────────────────────────────── */
+.teamSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+  border-top: 1px solid rgba(14, 14, 14, 0.1);
+}
+
+.teamHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--ink);
+  margin: var(--space-4) 0 var(--space-8);
+}
+
+/* 3+2 grid using 6-column subgrid — same as home */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4) var(--space-3);
+}
+
+.teamCard {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.teamCard:nth-child(4) { grid-column: 2 / span 2; }
+.teamCard:nth-child(5) { grid-column: 4 / span 2; }
+
+.teamPhoto {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  background-color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+  overflow: hidden;
+}
+
+.teamImg {
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.teamInitial {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  color: var(--paper);
+  opacity: 0.12;
+  user-select: none;
+}
+
+.teamRole {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--grey-500);
+  max-width: none;
+}
+
+.teamName {
+  font-family: var(--font-serif);
+  font-size: var(--text-h4);
+  color: var(--ink);
+  max-width: none;
+}
+
+.teamDegree {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  color: var(--grey-500);
+  max-width: none;
+}
+
+/* ── 6. Achievements ──────────────────────────────────────── */
+.achievementsSection {
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: var(--space-16) 0;
+  border-top: 1px solid rgba(241, 239, 234, 0.08);
+}
+
+.achievementsHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--paper);
+  line-height: 1.15;
+  margin: var(--space-4) 0 var(--space-8);
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  border-left: 1px solid rgba(241, 239, 234, 0.12);
+}
+
+.achievementsGrid > * {
+  padding-left: var(--space-6);
+  border-left: 1px solid rgba(241, 239, 234, 0.12);
+  padding-right: var(--space-4);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .whoColumns {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .objectivesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .teamGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .teamCard            { grid-column: span 2; }
+  .teamCard:nth-child(4) { grid-column: span 2; }
+  .teamCard:nth-child(5) { grid-column: span 2; }
+
+  .achievementsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldItem {
+    grid-template-columns: 3.5rem 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teamCard            { grid-column: span 1; }
+  .teamCard:nth-child(4) { grid-column: span 1; }
+  .teamCard:nth-child(5) { grid-column: span 1; }
+}

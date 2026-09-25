@@ -1,0 +1,244 @@
+/* =============================================================
+   Fellowship page styles
+   ============================================================= */
+
+.container {
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  padding: 0 var(--outer-margin);
+}
+
+/* ── 1. Hero ──────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+  overflow: hidden;
+  min-height: calc(100svh - 5rem);
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroGear {
+  position: absolute;
+  top: -20%;
+  right: -8%;
+  color: var(--ink);
+  opacity: 0.04;
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  padding: var(--space-12) var(--outer-margin);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.heroHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1.05;
+  max-width: 14ch;
+}
+
+.heroSub {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+/* Status banner */
+.statusBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid currentColor;
+  width: fit-content;
+}
+
+.statusDev {
+  color: var(--grey-500);
+  border-color: rgba(14, 14, 14, 0.15);
+}
+
+.statusOpen {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.statusDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+.statusText {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ── Shared section styles ────────────────────────────────── */
+.sectionHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: var(--space-4) 0 var(--space-8);
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+/* ── 2. What is it ────────────────────────────────────────── */
+.whatSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+  border-top: 1px solid rgba(14, 14, 14, 0.1);
+}
+
+.textColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+/* ── 3. Who it's for ──────────────────────────────────────── */
+.whoSection {
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: var(--space-16) 0;
+}
+
+.whoSection .sectionHeadline {
+  color: var(--paper);
+}
+
+.whoSection .body {
+  color: var(--paper-dim);
+}
+
+/* ── 4. Benefits ──────────────────────────────────────────── */
+.benefitsSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+  border-top: 1px solid rgba(14, 14, 14, 0.1);
+}
+
+.benefitsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(14, 14, 14, 0.12);
+  border-left: 1px solid rgba(14, 14, 14, 0.12);
+}
+
+.benefitItem {
+  padding: var(--space-6);
+  border-right: 1px solid rgba(14, 14, 14, 0.12);
+  border-bottom: 1px solid rgba(14, 14, 14, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.benefitLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4);
+  font-weight: 800;
+  font-variation-settings: 'wdth' 125;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.benefitBody {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.65;
+  max-width: 40ch;
+}
+
+/* ── 5. Timeline ──────────────────────────────────────────── */
+.timelineSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+  border-top: 1px solid rgba(14, 14, 14, 0.1);
+}
+
+/* ── 6. CTA ───────────────────────────────────────────────── */
+.ctaSection {
+  background-color: var(--oxblood);
+  color: var(--paper);
+  padding: var(--space-16) 0;
+}
+
+.ctaInner {
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  padding: 0 var(--outer-margin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.ctaHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--paper);
+  line-height: 1;
+}
+
+.ctaBody {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: rgba(241, 239, 234, 0.8);
+  max-width: 52ch;
+  line-height: 1.65;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .textColumns {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .benefitsList {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+
+  .benefitItem {
+    border-left: 1px solid rgba(14, 14, 14, 0.12);
+  }
+}

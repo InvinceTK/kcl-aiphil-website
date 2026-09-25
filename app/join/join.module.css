@@ -1,0 +1,224 @@
+/* =============================================================
+   Join page styles
+   ============================================================= */
+
+.container {
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  padding: 0 var(--outer-margin);
+}
+
+/* Vertical hairline frame rules */
+.frameL,
+.frameR {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--paper);
+  opacity: 0.18;
+  pointer-events: none;
+}
+.frameL { left:  var(--outer-margin); }
+.frameR { right: var(--outer-margin); }
+
+/* ── 1. Poster hero ───────────────────────────────────────── */
+.hero {
+  position: relative;
+  background-color: var(--ink);
+  color: var(--paper);
+  min-height: calc(100svh - 5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-16) var(--outer-margin);
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* AIΦ wordmark */
+.wordmarkBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 900;
+  color: var(--paper);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.wordmarkRule {
+  width: 3rem;
+  height: 1px;
+  background-color: var(--paper);
+  opacity: 0.4;
+}
+
+/* Copy block */
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.heroHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  color: var(--paper);
+  line-height: 1.05;
+  text-align: center;
+}
+
+.heroTagline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h4);
+  font-style: italic;
+  color: var(--paper-dim);
+  max-width: 40ch;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ── 2. What you get ──────────────────────────────────────── */
+.benefitsSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+}
+
+.sectionHeadline {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: var(--space-4) 0 var(--space-8);
+}
+
+.benefitList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(14, 14, 14, 0.15);
+}
+
+.benefitItem {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid rgba(14, 14, 14, 0.1);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.benefitMark {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--grey-500);
+  flex-shrink: 0;
+}
+
+/* ── 3. FAQ ───────────────────────────────────────────────── */
+.faqSection {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: var(--space-16) 0;
+  border-top: 1px solid rgba(14, 14, 14, 0.1);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(14, 14, 14, 0.12);
+}
+
+.faqItem {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid rgba(14, 14, 14, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: baseline;
+}
+
+.faqQ {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4);
+  font-weight: 800;
+  font-variation-settings: 'wdth' 125;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.faqA {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── 4. Final CTA ─────────────────────────────────────────── */
+.ctaSection {
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: var(--space-12) 0;
+  border-top: 1px solid rgba(241, 239, 234, 0.08);
+}
+
+.ctaInner {
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  padding: 0 var(--outer-margin);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.ctaLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--paper-dim);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .faqItem {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .ctaInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
