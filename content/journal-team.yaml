@@ -1,0 +1,8 @@
+# TODO: Replace all placeholder values with real journal team data
+- name: "TODO: Editor-in-Chief Name"
+  role: "Editor-in-Chief"
+  photo: "/images/journal-team/editor-in-chief.jpg"
+
+- name: "TODO: Managing Editor Name"
+  role: "Managing Editor"
+  photo: "/images/journal-team/managing-editor.jpg"

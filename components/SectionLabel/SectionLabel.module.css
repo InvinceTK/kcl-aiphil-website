@@ -1,0 +1,12 @@
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--grey-500);
+  border-top: var(--rule);
+  padding-top: var(--space-1);
+  margin: 0;
+}

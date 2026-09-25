@@ -1,0 +1,126 @@
+.page {
+  background-color: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: calc(var(--max-width) + var(--outer-margin) * 2);
+  margin: 0 auto;
+  padding: var(--space-8) var(--outer-margin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.pageTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--grey-500);
+  border-top: 1px solid var(--ink);
+  padding-top: var(--space-1);
+}
+
+/* ── Swatches ─────────────────────────────────────────────── */
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.swatch {
+  width: 160px;
+  height: 100px;
+  padding: var(--space-2);
+  display: flex;
+  align-items: flex-end;
+}
+
+.swatch code {
+  font-size: 11px;
+  line-height: 1.6;
+  display: block;
+}
+
+/* ── Type ─────────────────────────────────────────────────── */
+.typeStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  color: var(--ink);
+}
+
+/* ── Logos ────────────────────────────────────────────────── */
+.logoRow {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.logoDark {
+  background: var(--ink);
+  padding: var(--space-4);
+  color: var(--paper-dim);
+  font-size: var(--text-label);
+  font-family: var(--font-sans);
+}
+
+.logoPaper {
+  background: var(--paper);
+  padding: var(--space-4);
+  border: 1px solid var(--ink);
+  color: var(--grey-500);
+  font-size: var(--text-label);
+  font-family: var(--font-sans);
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.buttonRow {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  background: var(--paper);
+  padding: var(--space-4);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.buttonRowInk {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  background: var(--ink);
+  padding: var(--space-4);
+  color: var(--paper);
+}
+
+/* ── Stats ────────────────────────────────────────────────── */
+.statRow {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  color: var(--paper);
+}
+
+/* ── Gear ─────────────────────────────────────────────────── */
+.gearRow {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+}

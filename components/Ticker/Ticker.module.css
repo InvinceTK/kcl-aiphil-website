@@ -1,0 +1,33 @@
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.track {
+  display: inline-flex;
+  animation: tickerScroll linear infinite;
+  will-change: transform;
+}
+
+.text {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 800;
+  font-variation-settings: 'wdth' 125;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-right: 0;
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

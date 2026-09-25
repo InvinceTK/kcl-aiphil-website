@@ -1,0 +1,25 @@
+# TODO: Replace all placeholder values with real committee data
+- name: "TODO: President Name"
+  role: "President"
+  degree: "TODO: Degree, Year"
+  photo: "/images/committee/president.jpg"
+
+- name: "TODO: Vice-President Name"
+  role: "Vice-President"
+  degree: "TODO: Degree, Year"
+  photo: "/images/committee/vice-president.jpg"
+
+- name: "TODO: Head of Operations Name"
+  role: "TODO: Head of Operations"
+  degree: "TODO: Degree, Year"
+  photo: "/images/committee/head-operations.jpg"
+
+- name: "TODO: Head of Marketing Name"
+  role: "TODO: Head of Marketing"
+  degree: "TODO: Degree, Year"
+  photo: "/images/committee/head-marketing.jpg"
+
+- name: "TODO: Head of Events Name"
+  role: "Head of Events"
+  degree: "TODO: Degree, Year"
+  photo: "/images/committee/head-events.jpg"

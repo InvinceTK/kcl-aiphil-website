@@ -1,0 +1,59 @@
+.band {
+  width: 100%;
+  overflow: hidden;
+  line-height: 1;
+  user-select: none;
+}
+
+.row {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-display);
+  font-weight: 800;
+  font-variation-settings: 'wdth' 125;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    color 600ms ease var(--row-delay, 0ms),
+    opacity 400ms ease var(--row-delay, 0ms);
+}
+
+/* Ghost rows */
+.ghost {
+  color: var(--ink-soft);
+  opacity: 0.35;
+}
+
+/* Highlight row — hidden until revealed */
+.highlight {
+  color: transparent;
+}
+
+/* Revealed state (set via data-revealed on parent) */
+[data-revealed='true'] .highlight {
+  color: var(--paper);
+}
+
+.prefix {
+  font-weight: 300;
+  font-variation-settings: 'wdth' 125;
+  margin-right: 0.04em;
+  color: var(--paper-dim);
+}
+
+.bold {
+  font-weight: 900;
+}
+
+/* Instant reveal when motion is reduced */
+@media (prefers-reduced-motion: reduce) {
+  .row {
+    transition: none;
+  }
+
+  .highlight {
+    color: var(--paper);
+  }
+}

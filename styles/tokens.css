@@ -1,0 +1,69 @@
+/* =============================================================
+   AIΦ Design Tokens
+   All custom properties live here. Import into app/layout.tsx.
+   ============================================================= */
+
+:root {
+  /* ── Colour ───────────────────────────────────────────────── */
+  --ink:          #0E0E0E;
+  --ink-soft:     #1C1C1C;
+  --paper:        #F1EFEA;
+  --paper-dim:    #D9D6CF;
+  --oxblood:      #5E1515;
+  --oxblood-deep: #3F0D0D;
+  --grey-500:     #8A8781;
+  --rule-color:   currentColor;
+
+  /* ── Typography ───────────────────────────────────────────── */
+  /* Playfair Display – classical display */
+  --font-serif: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  /* EB Garamond – [UP] journal mark and pull quotes */
+  --font-garamond: var(--font-garamond-eb), 'EB Garamond', Georgia, serif;
+  /* Archivo variable – machine voice: headings, UI, body */
+  --font-sans: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+
+  /* Type scale – fluid via clamp() */
+  --text-label:   0.75rem;    /* 12px */
+  --text-body:    1.125rem;   /* 18px */
+  --text-h4:      1.375rem;   /* 22px */
+  --text-h3:      clamp(1.625rem, 3vw, 2.125rem);   /* 26–34px */
+  --text-h2:      clamp(2.25rem, 5vw, 4rem);         /* 36–64px */
+  --text-h1:      clamp(3.5rem, 9vw, 8.75rem);       /* 56–140px */
+  --text-display: clamp(5rem, 16vw, 15rem);          /* 80–240px */
+
+  /* ── Spacing / Rhythm (8px base) ─────────────────────────── */
+  --space-1:  0.5rem;   /*  8px */
+  --space-2:  1rem;     /* 16px */
+  --space-3:  1.5rem;   /* 24px */
+  --space-4:  2rem;     /* 32px */
+  --space-6:  3rem;     /* 48px */
+  --space-8:  4rem;     /* 64px */
+  --space-12: 6rem;     /* 96px */
+  --space-16: 8rem;     /* 128px */
+  --space-24: 12rem;    /* 192px */
+
+  /* ── Grid ─────────────────────────────────────────────────── */
+  --cols:           12;
+  --gutter:         1.5rem; /* 24px */
+  --outer-margin:   clamp(1rem, 5vw, 4rem); /* 16–64px */
+  --max-width:      80rem;  /* 1280px */
+
+  /* ── Borders / Rules ──────────────────────────────────────── */
+  --rule: 1px solid currentColor;
+
+  /* ── Transitions ──────────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-medium: 300ms ease;
+
+  /* ── Accessibility focus ring ─────────────────────────────── */
+  --focus-outline: 2px solid var(--paper);
+  --focus-offset:  3px;
+}
+
+/* Dark-surface overrides for focus ring */
+[data-theme="ink"] {
+  --focus-outline: 2px solid var(--paper);
+}
+[data-theme="paper"] {
+  --focus-outline: 2px solid var(--oxblood);
+}

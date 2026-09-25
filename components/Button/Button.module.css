@@ -1,0 +1,52 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+  white-space: nowrap;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.btn:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* ── Solid (oxblood) ───────────────────────────────────────── */
+.solid {
+  background-color: var(--oxblood);
+  color: var(--paper);
+  border-color: var(--oxblood);
+}
+
+.solid:hover {
+  background-color: var(--oxblood-deep);
+  border-color: var(--oxblood-deep);
+}
+
+/* ── Outline (hairline) ────────────────────────────────────── */
+.outline {
+  background-color: transparent;
+  color: currentColor;
+  border-color: currentColor;
+}
+
+.outline:hover {
+  background-color: currentColor;
+  color: var(--paper);
+}
