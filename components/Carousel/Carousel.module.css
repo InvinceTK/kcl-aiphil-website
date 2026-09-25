@@ -19,6 +19,11 @@
   display: none;
 }
 
+.track:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
 .track > * {
   scroll-snap-align: start;
   flex-shrink: 0;

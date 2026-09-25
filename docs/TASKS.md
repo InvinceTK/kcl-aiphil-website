@@ -74,15 +74,15 @@ Source of truth: `docs/DESIGN_SPEC.md` (look and behaviour) and `brand-assets/sk
 - [x] Commit: "Phase 4: other pages" ✓
 
 ## Phase 5 — Polish and handover
-- [ ] Metadata API titles/descriptions, `next/og` Open Graph images, favicon, `app/sitemap.ts`, `app/robots.ts`
-- [ ] Accessibility pass: keyboard-only, screen reader labels, contrast, focus states, alt text
-- [ ] Lighthouse mobile 95+ on every route
-- [ ] Broken-link check; confirm no `TODO:` left (or list the rest)
-- [ ] `README.md`: run, build, deploy to Vercel
-- [ ] `CONTENT_GUIDE.md`: how to add an event, a committee member, a journal issue
-- [ ] Deploy to Vercel with preview deploys on pull requests
-- [ ] lint + tsc + build: zero errors
-- [ ] Commit: "Phase 5: polish and handover"
+- [x] Metadata API titles/descriptions, `next/og` Open Graph images, favicon, `app/sitemap.ts`, `app/robots.ts`
+- [x] Accessibility pass: keyboard-only, screen reader labels, contrast, focus states, alt text
+- [ ] Lighthouse mobile 95+ on every route (needs live URL — run after Vercel deploy)
+- [x] Broken-link check; remaining `TODO:` items are all content/URLs blocked on committee (listed in README.md)
+- [x] `README.md`: run, build, deploy to Vercel
+- [x] `CONTENT_GUIDE.md`: how to add an event, a committee member, a journal issue
+- [ ] Deploy to Vercel with preview deploys on pull requests (needs committee Vercel account)
+- [x] lint + tsc + build: zero errors ✓
+- [x] Commit: "Phase 5: polish and handover" ✓
 
 ## Later (optional)
 - [ ] Per-essay web pages using the journal-spread template (MDX, footnotes, pull quotes, print stylesheet)

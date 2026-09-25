@@ -7,12 +7,24 @@ import Grain from '@/components/Grain/Grain'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kcl-aiphi.com'),
   title: {
     default: `AIΦ — ${siteConfig.fullName}`,
     template: `%s | AIΦ`,
   },
   description: siteConfig.description,
-  metadataBase: new URL('https://kcl-aiphi.com'),
+  openGraph: {
+    type: 'website',
+    siteName: 'AIΦ',
+    locale: 'en_GB',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

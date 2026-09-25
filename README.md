@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AIΦ Website
 
-## Getting Started
+Website for the King's Artificial Intelligence and Philosophy Society (KCL).
 
-First, run the development server:
+Built with Next.js 16 (App Router) · TypeScript · Plain CSS · Deployed on Vercel.
+
+---
+
+## Running locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Checks (must all pass before committing)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint       # ESLint
+npx tsc --noEmit   # TypeScript
+npm run build      # Production build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Deploying to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
+2. Click **Add New → Project** and import the `kcl-aiphil-website` repository.
+3. Leave all build settings as defaults (Vercel detects Next.js automatically).
+4. Click **Deploy**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After the first deploy, every push to `main` redeploys automatically. Pull requests get their own preview URL.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Custom domain:** once the committee has a domain, go to Project → Settings → Domains and add it. Then update `metadataBase` in `app/layout.tsx` and the URLs in `app/sitemap.ts` and `app/robots.ts` to match.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Before going live — things that need the committee
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All placeholders are marked `TODO:` in `site.config.ts` and in `content/` files.
+
+| Item | File | What to change |
+|---|---|---|
+| KCLSU membership URL | `site.config.ts` → `membershipUrl` | Replace `TODO:https://...` with real URL |
+| Instagram handle | `site.config.ts` → `socials.instagram` | Replace placeholder |
+| LinkedIn handle | `site.config.ts` → `socials.linkedin` | Replace placeholder |
+| Contact email | `site.config.ts` → `socials.email` | Replace placeholder |
+| Fellowship interest form | `site.config.ts` → `fellowship.interestUrl` | Replace placeholder |
+| Journal submissions form | `site.config.ts` → `journal.submissionsUrl` | Replace placeholder |
+| Fellowship status | `site.config.ts` → `fellowship.status` | Change `'development'` to `'open'` when applications open |
+| Committee names & photos | `content/committee.yaml` | Fill in name, role, degree, photo path |
+| Journal team | `content/journal-team.yaml` | Fill in Editor-in-Chief and Managing Editor |
+| Issue 1 cover & PDF | `content/issues/issue-01.md` | Add cover image path and PDF path; set `released: true` |
+| Timeline milestones | `app/journal/page.tsx` → `timelineMilestones` | Replace `TODO:` body text |
+| Domain | Vercel dashboard | Add custom domain under Project → Settings → Domains |
+| Site URL | `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts` | Replace `https://kcl-aiphi.com` with real domain |
+
+> See `CONTENT_GUIDE.md` for step-by-step instructions on adding events, committee members and journal issues.
+
+---
+
+## Project structure
+
+```
+app/                 # Next.js App Router pages and layouts
+  layout.tsx         # Root layout (header, footer, grain, fonts)
+  page.tsx           # Home
+  events/            # Events list page
+  fellowship/        # Fellowship page
+  journal/           # Unprompted journal page
+  join/              # Membership / join page
+  not-found.tsx      # 404
+
+components/          # Reusable UI components
+  Button/
+  Carousel/
+  EventFilter/       # Client: filter chips + event rows
+  Footer/
+  Gear/              # SVG gear motif (scroll-rotate)
+  Grain/             # Fixed noise texture overlay
+  SectionLabel/
+  SiteHeader/        # Header + MobileMenu (mobile nav)
+  StackedBand/       # Stacked word rows with reveal animation
+  StatBlock/
+  Ticker/            # Scrolling text loop
+
+content/             # All site copy — edit these, never touch components
+  committee.yaml
+  journal-team.yaml
+  events/            # One .md file per event
+  issues/            # One .md file per journal issue
+
+lib/
+  content.ts         # Typed loaders (gray-matter + zod)
+  fonts.ts           # next/font/google setup
+
+styles/
+  tokens.css         # All CSS custom properties
+
+site.config.ts       # Site-wide settings (URLs, stats, fellowship status)
+```
+
+---
+
+## Tech notes
+
+- **No Tailwind.** Styles are in `styles/tokens.css` and CSS Modules per component.
+- **Server Components by default.** Only interactive pieces use `'use client'`: `Carousel`, `EventFilter`, `Gear`, `MobileMenu`, `StackedBand`, `Ticker`.
+- **Static generation.** All pages prerender at build time (`○` in the build output). No server required.
+- **Images via `next/image`.** Handles AVIF/WebP conversion, lazy loading and responsive sizes automatically.

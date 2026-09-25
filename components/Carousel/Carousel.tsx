@@ -20,7 +20,7 @@ export default function Carousel({ children, label }: CarouselProps) {
 
   return (
     <div className={styles.carousel} role="region" aria-label={label}>
-      <div ref={trackRef} className={styles.track}>
+      <div ref={trackRef} className={styles.track} tabIndex={0} role="list">
         {children}
       </div>
       <div className={styles.controls}>
