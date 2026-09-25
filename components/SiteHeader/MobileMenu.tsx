@@ -8,7 +8,6 @@ import styles from './SiteHeader.module.css'
 
 const navLinks = [
   { href: '/',           label: 'Home' },
-  { href: '/about',      label: 'About' },
   { href: '/events',     label: 'Events' },
   { href: '/fellowship', label: 'Fellowship' },
   { href: '/journal',    label: 'Journal' },
