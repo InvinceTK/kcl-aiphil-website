@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { getEvents } from '@/lib/content'
 import StackedBand from '@/components/StackedBand/StackedBand'
 import SectionLabel from '@/components/SectionLabel/SectionLabel'
@@ -18,6 +19,19 @@ export default function EventsPage() {
     <>
       {/* ── Header band ─────────────────────────────────────── */}
       <section className={styles.headerSection} aria-label="Events page header">
+        {/* Background photo: Guys Campus */}
+        <div className={styles.photoWrap} aria-hidden="true">
+          <Image
+            src="/images/events/guys-campus.jpg"
+            alt=""
+            fill
+            className={styles.photo}
+            priority
+            sizes="100vw"
+          />
+          <div className={styles.photoOverlay} />
+        </div>
+
         <div className={styles.bandWrap} aria-hidden="true">
           <StackedBand
             word="EVENTS"

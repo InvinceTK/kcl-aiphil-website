@@ -18,21 +18,25 @@ const timelineMilestones = [
     side: 'left' as const,
     label: 'The idea',
     body: 'TODO: How Unprompted was conceived and what it aims to do.',
+    image: '/images/other/aristotle-homer.jpg',
   },
   {
     side: 'right' as const,
     label: 'Call for submissions',
     body: 'TODO: When submissions opened and what the journal asked for.',
+    image: '/images/other/homer-apotheosis.jpg',
   },
   {
     side: 'left' as const,
     label: 'Editing & review',
     body: 'TODO: How the editing and peer-review process worked.',
+    image: '/images/other/sappho-alcaeus.jpg',
   },
   {
     side: 'right' as const,
     label: 'Volume 1 — November 2026',
     body: 'The first issue of Unprompted arrives.',
+    image: '/images/other/reading-from-homer.jpg',
   },
 ]
 
@@ -118,7 +122,7 @@ export default function JournalPage() {
               /* Cover preview — shown before release, no PDF link */
               <div className={styles.coverPreview} aria-label="Unprompted Issue 1 cover — coming November 2026">
                 <Image
-                  src="/images/unprompted-cover.png"
+                  src="/images/journal/unprompted-cover.png"
                   alt="Unprompted Issue 1 cover"
                   fill
                   className={styles.coverImg}
@@ -153,7 +157,15 @@ export default function JournalPage() {
                     </div>
                   ) : (
                     <div className={styles.entryImg} aria-hidden="true">
-                      <div className={styles.imgPlaceholder} />
+                      <div className={styles.entryImgInner}>
+                        <Image
+                          src={m.image}
+                          alt=""
+                          fill
+                          className={styles.entryImgPhoto}
+                          sizes="280px"
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
@@ -172,7 +184,15 @@ export default function JournalPage() {
                     </div>
                   ) : (
                     <div className={styles.entryImg} aria-hidden="true">
-                      <div className={styles.imgPlaceholder} />
+                      <div className={styles.entryImgInner}>
+                        <Image
+                          src={m.image}
+                          alt=""
+                          fill
+                          className={styles.entryImgPhoto}
+                          sizes="280px"
+                        />
+                      </div>
                     </div>
                   )}
                 </div>

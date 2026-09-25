@@ -67,7 +67,7 @@ export default function Home() {
         {/* Photo: greyscale, heavy dark overlay */}
         <div className={styles.heroPhotoWrap} aria-hidden="true">
           <Image
-            src="/images/bush-house.jpg"
+            src="/images/home/bush-house.jpg"
             alt=""
             fill
             className={styles.heroPhoto}
@@ -124,10 +124,16 @@ export default function Home() {
         <div className={styles.container}>
           <SectionLabel>Who we are</SectionLabel>
 
-          {/* Row A: placeholder left, text right */}
+          {/* Row A: image left, text right */}
           <div className={styles.zigzagA}>
             <div className={styles.whoImgWrap} aria-hidden="true">
-              <div className={styles.imgPlaceholder} />
+              <Image
+                src="/images/other/athens-school.jpg"
+                alt=""
+                fill
+                className={styles.whoImg}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             <div className={styles.whoText}>
               <h2 id="who-heading" className={styles.whoHeadline}>
@@ -153,7 +159,13 @@ export default function Home() {
               </ul>
             </div>
             <div className={styles.whoImgWrap} aria-hidden="true">
-              <div className={styles.imgPlaceholder} />
+              <Image
+                src="/images/other/death-socrates.jpg"
+                alt=""
+                fill
+                className={styles.whoImg}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

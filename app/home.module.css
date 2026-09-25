@@ -163,6 +163,11 @@
   background-size: 200px;
 }
 
+.whoImg {
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1) brightness(0.85);
+}
+
 .whoText {
   display: flex;
   flex-direction: column;
@@ -296,6 +301,8 @@
   color: var(--paper);
   line-height: 1;
   max-width: none;
+  position: relative;
+  z-index: 1;
 }
 
 .activityDesc {
@@ -304,6 +311,8 @@
   color: var(--paper-dim);
   line-height: 1.55;
   max-width: none;
+  position: relative;
+  z-index: 1;
 }
 
 /* ── 5. The team ─────────────────────────────────────────── */

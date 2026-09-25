@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { siteConfig } from '@/site.config'
 import Gear from '@/components/Gear/Gear'
 import Button from '@/components/Button/Button'
@@ -38,6 +39,19 @@ export default function FellowshipPage() {
     <>
       {/* ── 1. Hero ─────────────────────────────────────────── */}
       <section className={styles.hero} aria-labelledby="fellowship-hero-heading">
+        {/* Background photo: Maughan Library */}
+        <div className={styles.heroPhotoWrap} aria-hidden="true">
+          <Image
+            src="/images/fellowship/maughan-library.jpg"
+            alt=""
+            fill
+            className={styles.heroPhoto}
+            priority
+            sizes="100vw"
+          />
+          <div className={styles.heroOverlay} />
+        </div>
+
         <div className={styles.heroGear} aria-hidden="true">
           <Gear size={520} teeth={11} color="currentColor" scrollRotate />
         </div>
