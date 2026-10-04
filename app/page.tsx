@@ -45,7 +45,7 @@ const activities = [
   {
     label: '[UP] Journal',
     description: 'Open to all who want to write about AI and Philosophy.',
-    image: '/images/unprompted-cover.png',
+    image: '/images/journal/cover-current.jpeg',
   },
 ]
 

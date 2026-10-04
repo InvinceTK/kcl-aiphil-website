@@ -24,6 +24,7 @@ export default function Footer() {
               alt="AIΦ"
               width={64}
               height={36}
+              style={{ height: 'auto' }}
             />
           </Link>
           <p className={styles.fullName}>{siteConfig.fullName}</p>

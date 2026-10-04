@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import styles from './Carousel.module.css'
 
 type CarouselProps = {
@@ -10,6 +10,21 @@ type CarouselProps = {
 
 export default function Carousel({ children, label }: CarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null)
+  const [atStart, setAtStart] = useState(true)
+  const [atEnd, setAtEnd] = useState(false)
+
+  const updateBounds = useCallback(() => {
+    const track = trackRef.current
+    if (!track) return
+    setAtStart(track.scrollLeft <= 0)
+    setAtEnd(track.scrollLeft + track.clientWidth >= track.scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    updateBounds()
+    window.addEventListener('resize', updateBounds)
+    return () => window.removeEventListener('resize', updateBounds)
+  }, [updateBounds])
 
   const scroll = (dir: 1 | -1) => {
     if (!trackRef.current) return
@@ -20,7 +35,13 @@ export default function Carousel({ children, label }: CarouselProps) {
 
   return (
     <div className={styles.carousel} role="region" aria-label={label}>
-      <div ref={trackRef} className={styles.track} tabIndex={0} role="list">
+      <div
+        ref={trackRef}
+        className={styles.track}
+        tabIndex={0}
+        role="list"
+        onScroll={updateBounds}
+      >
         {children}
       </div>
       <div className={styles.controls}>
@@ -28,6 +49,7 @@ export default function Carousel({ children, label }: CarouselProps) {
           className={styles.arrow}
           onClick={() => scroll(-1)}
           aria-label="Previous"
+          disabled={atStart}
         >
           <span aria-hidden="true">←</span>
         </button>
@@ -35,6 +57,7 @@ export default function Carousel({ children, label }: CarouselProps) {
           className={styles.arrow}
           onClick={() => scroll(1)}
           aria-label="Next"
+          disabled={atEnd}
         >
           <span aria-hidden="true">→</span>
         </button>

@@ -446,6 +446,12 @@
   opacity: 0.8;
 }
 
+/* Unreleased cover preview */
+.coverPreviewCard {
+  position: absolute;
+  inset: 0;
+}
+
 /* COMING placeholder */
 .comingCard {
   position: absolute;

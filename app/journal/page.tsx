@@ -122,7 +122,7 @@ export default function JournalPage() {
               /* Cover preview — shown before release, no PDF link */
               <div className={styles.coverPreview} aria-label="Unprompted Issue 1 cover — coming November 2026">
                 <Image
-                  src="/images/journal/unprompted-cover.png"
+                  src="/images/journal/cover-current.jpeg"
                   alt="Unprompted Issue 1 cover"
                   fill
                   className={styles.coverImg}
@@ -253,6 +253,19 @@ export default function JournalPage() {
                     sizes="320px"
                   />
                 </a>
+              ) : issue.cover ? (
+                <div
+                  className={styles.coverPreviewCard}
+                  aria-label={`Issue ${issue.number}: coming`}
+                >
+                  <Image
+                    src={issue.cover}
+                    alt={`Issue ${issue.number} cover preview`}
+                    fill
+                    className={styles.issueCover}
+                    sizes="320px"
+                  />
+                </div>
               ) : (
                 <div
                   className={styles.comingCard}

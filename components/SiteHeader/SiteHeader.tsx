@@ -23,6 +23,7 @@ export default function SiteHeader({ theme = 'ink' }: SiteHeaderProps) {
             alt="AIΦ"
             width={72}
             height={40}
+            style={{ height: 'auto' }}
             priority
           />
         </Link>
