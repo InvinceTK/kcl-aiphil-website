@@ -61,7 +61,7 @@ export default function FellowshipPage() {
             The AI Safety Fellowship.
           </h1>
           <p className={styles.heroSub}>
-            A programme for members who want to go further — into the research,
+            A programme for members who want to go further, into the research,
             the policy and the real work of making AI safe.
           </p>
 
@@ -74,7 +74,7 @@ export default function FellowshipPage() {
             <span className={styles.statusText}>
               {isOpen
                 ? 'Applications are open'
-                : 'In development — register your interest below'}
+                : 'In development. Register your interest below.'}
             </span>
           </div>
 
@@ -97,7 +97,7 @@ export default function FellowshipPage() {
             <p className={styles.body}>
               It is not a course, and it does not issue certificates. It is a
               community of people doing the reading, having the hard arguments
-              and building the skills to contribute — to research, to policy, or
+              and building the skills to contribute to research, to policy, or
               to the organisations working on the most important problems in
               technology today.
             </p>
@@ -114,7 +114,7 @@ export default function FellowshipPage() {
           </h2>
           <p className={styles.body} style={{ maxWidth: '60ch' }}>
             The fellowship is open to all AIΦ members from any year and any
-            degree. You do not need a technical background — you need curiosity,
+            degree. You do not need a technical background; you need curiosity,
             commitment and the willingness to engage seriously with difficult
             ideas over a sustained period.
           </p>

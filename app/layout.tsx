@@ -9,7 +9,7 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://kcl-aiphi.com'),
   title: {
-    default: `AIΦ — ${siteConfig.fullName}`,
+    default: `AIΦ | ${siteConfig.fullName}`,
     template: `%s | AIΦ`,
   },
   description: siteConfig.description,

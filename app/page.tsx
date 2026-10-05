@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { siteConfig } from '@/site.config'
 import { getCommittee } from '@/lib/content'
 import Gear from '@/components/Gear/Gear'
@@ -94,9 +93,6 @@ export default function Home() {
           </h1>
           <div className={styles.heroCtas}>
             <Button variant="solid" href={siteConfig.membershipUrl} external>Join now</Button>
-            <Link href="/events" className={styles.heroLink}>
-              See events →
-            </Link>
           </div>
         </div>
 
@@ -140,7 +136,7 @@ export default function Home() {
                 A student-led forum for AI and philosophy.
               </h2>
               <p className={styles.whoBody}>
-                Our generation will live alongside AI as it becomes embedded in every field and career. We aim to prepare students to engage with how AI is implemented in society — and understand the fundamentals needed to tackle it.
+                Our generation will live alongside AI as it becomes embedded in every field and career. We aim to prepare students to engage with how AI is implemented in society, and understand the fundamentals needed to tackle it.
               </p>
             </div>
           </div>
@@ -198,14 +194,13 @@ export default function Home() {
       </section>
 
       {/* ── 5. The team ──────────────────────────────────────── */}
-      <section className={styles.teamSection} aria-labelledby="team-heading">
+      {/* <section className={styles.teamSection} aria-labelledby="team-heading">
         <div className={styles.container}>
           <SectionLabel>The committee</SectionLabel>
           <h2 id="team-heading" className={styles.teamHeadline}>The team</h2>
           <div className={styles.teamGrid}>
             {committee.map((member) => (
               <div key={member.role} className={styles.teamCard}>
-                {/* TODO: replace with real headshot via next/image once photos arrive */}
                 <div className={styles.teamPhoto} aria-hidden="true">
                   <span className={styles.teamInitial}>
                     {member.role.charAt(0)}
@@ -217,7 +212,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── 6. Proof strip ───────────────────────────────────── */}
       <section className={styles.proofStrip} aria-label="Achievements">
@@ -233,7 +228,7 @@ export default function Home() {
             />
             <StatBlock
               value="2"
-              label="New programmes — journal & fellowship"
+              label="New programmes: journal & fellowship"
             />
           </div>
         </div>

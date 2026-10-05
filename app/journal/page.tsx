@@ -34,7 +34,7 @@ const timelineMilestones = [
   },
   {
     side: 'right' as const,
-    label: 'Volume 1 — November 2026',
+    label: 'Volume 1, November 2026',
     body: 'The first issue of Unprompted arrived.',
     image: '/images/other/reading-from-homer.jpg',
   },
@@ -207,7 +207,7 @@ export default function JournalPage() {
       </section>
 
       {/* ── 3. Thanks to our editors ──────────────────────────── */}
-      <section className={styles.editorsSection} aria-labelledby="editors-heading">
+      {/* <section className={styles.editorsSection} aria-labelledby="editors-heading">
         <div className={styles.container}>
           <h2 id="editors-heading" className={styles.editorsHeading}>
             Big thanks to our editors,<br />
@@ -216,7 +216,6 @@ export default function JournalPage() {
           <div className={styles.editorsGrid}>
             {journalTeam.map((member) => (
               <div key={member.role} className={styles.editorCard}>
-                {/* TODO: replace with real photo via next/image */}
                 <div className={styles.editorPhoto} aria-hidden="true">
                   <span className={styles.editorInitial}>
                     {member.role.charAt(0)}
@@ -228,7 +227,7 @@ export default function JournalPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── 4. More issues coming ─────────────────────────────── */}
       <section className={styles.moreSection} aria-labelledby="more-issues-heading">
@@ -297,7 +296,7 @@ export default function JournalPage() {
           </h2>
           <p className={styles.submitBody}>
             Unprompted is open to all students who want to write about AI and Philosophy.
-            Whether you have an essay, a reflection or a provocation — we want to hear from you.
+            Whether you have an essay, a reflection or a provocation, we want to hear from you.
           </p>
           {/* TODO: replace siteConfig.journal.submissionsUrl with real form link */}
           <Button variant="solid" href={siteConfig.journal.submissionsUrl} external>

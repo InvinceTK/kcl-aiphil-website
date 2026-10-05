@@ -22,7 +22,7 @@ export default function NotFound() {
         <SectionLabel>404</SectionLabel>
         <h1 className={styles.heading}>Page not found.</h1>
         <p className={styles.body}>
-          We couldn&rsquo;t find what you were looking for. Maybe it never existed —
+          We couldn&rsquo;t find what you were looking for. Maybe it never existed,
           or maybe that&rsquo;s the point.
         </p>
         <Link href="/" className={styles.homeLink}>
