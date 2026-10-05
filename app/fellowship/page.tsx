@@ -9,7 +9,7 @@ import styles from './fellowship.module.css'
 export const metadata: Metadata = {
   title: 'Fellowship — AIΦ',
   description:
-    'The AIΦ AI Safety Fellowship — a programme for members who want to go further into AI safety.',
+    'The AIΦ AI Safety Fellowship: a programme for members who want to go further into AI safety research, policy and practice.',
 }
 
 const benefits = [

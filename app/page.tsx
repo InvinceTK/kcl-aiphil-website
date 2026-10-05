@@ -136,7 +136,7 @@ export default function Home() {
                 A student-led forum for AI and philosophy.
               </h2>
               <p className={styles.whoBody}>
-                Our generation will live alongside AI as it becomes embedded in every field and career. We aim to prepare students to engage with how AI is implemented in society, and understand the fundamentals needed to tackle it.
+                Artificial intelligence may be the most powerful tool ever made, and the full extent of its benefits and risks is yet to be discovered. We believe it is just as important to question how we should think about this technology, what it means for our values, and how we ought to use it. Since our founding, we have built a community of over 580 members, hosted events with more than 100 attendees on average, and brought speakers including David Leslie, Jack Stilgoe and Philip Treleaven to King&apos;s.
               </p>
             </div>
           </div>
@@ -227,8 +227,8 @@ export default function Home() {
               label="Average attendance per event"
             />
             <StatBlock
-              value="2"
-              label="New programmes: journal & fellowship"
+              value="580+"
+              label="Members and growing"
             />
           </div>
         </div>
@@ -244,7 +244,7 @@ export default function Home() {
             Membership<br />is now open.
           </h2>
           <p className={styles.joinTagline}>
-            Become part of an award-winning King&apos;s College society focused on exploring the ethical development of AI.
+            Join a community of over 580 members at King&apos;s College London engaging seriously with the questions that artificial intelligence raises for humanity, values and society.
           </p>
           <Button variant="solid" href={siteConfig.membershipUrl} external>Join now</Button>
         </div>

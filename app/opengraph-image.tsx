@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'AIΦ — King\'s Artificial Intelligence and Philosophy Society'
+export const alt = 'AIΦ: King\'s Artificial Intelligence and Philosophy Society'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -83,7 +83,7 @@ export default function OGImage() {
             color: '#8A8781',
           }}
         >
-          King&apos;s College London — AI &amp; Philosophy Society
+          King&apos;s College London · AI &amp; Philosophy Society
         </div>
       </div>
     ),

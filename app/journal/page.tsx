@@ -9,7 +9,7 @@ import styles from './journal.module.css'
 
 export const metadata: Metadata = {
   title: 'Journal — Unprompted [UP]',
-  description: "Unprompted [UP] — the journal of AIΦ, King's College London, open to all students writing about AI and philosophy.",
+  description: "Unprompted [UP]: the journal of AIΦ, King's College London, open to all students writing seriously about AI and philosophy.",
 }
 
 // TODO: replace all placeholder text with real milestones from committee
@@ -17,24 +17,24 @@ const timelineMilestones = [
   {
     side: 'left' as const,
     label: 'The idea',
-    body: 'TODO: How Unprompted was conceived and what it aims to do.',
+    body: 'There are policy journals that discuss AI, and philosophy journals that briefly mention it. Unprompted was founded to bridge the two: a publication at the intersection of artificial intelligence and philosophy, engaging rigorously with how this technology reshapes what we think, value and owe to one another.',
     image: '/images/other/aristotle-homer.jpg',
   },
   {
     side: 'right' as const,
     label: 'Call for submissions',
-    body: 'TODO: When submissions opened and what the journal asked for.',
+    body: 'Submissions opened to all King\'s students, with approximately four months allocated for writing and article development. Articles were invited across three sections: Philosophy, Culture and Aesthetics, and Society, Politics and Law.',
     image: '/images/other/homer-apotheosis.jpg',
   },
   {
     side: 'left' as const,
     label: 'Editing & review',
-    body: 'TODO: How the editing and peer-review process worked.',
+    body: 'Each submission was developed through editorial guidance and peer review. The journal\'s standard was rigour without sensationalism: to interrogate what is really changing, and what we ought to do about it.',
     image: '/images/other/sappho-alcaeus.jpg',
   },
   {
     side: 'right' as const,
-    label: 'Volume 1, November 2026',
+    label: 'Volume 1, October 2026',
     body: 'The first issue of Unprompted arrived.',
     image: '/images/other/reading-from-homer.jpg',
   },
@@ -98,7 +98,7 @@ export default function JournalPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.coverLink}
-                aria-label="Read Unprompted Issue 1 — opens PDF"
+                aria-label="Read Unprompted Issue 1, opens PDF"
               >
                 <Image
                   src="/images/journal/cover-current.jpeg"
@@ -246,7 +246,7 @@ export default function JournalPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.issueLink}
-                  aria-label={`Issue ${issue.number}: ${issue.title} — open PDF`}
+                  aria-label={`Issue ${issue.number}: ${issue.title}, open PDF`}
                 >
                   <Image
                     src={issue.cover}
@@ -295,8 +295,8 @@ export default function JournalPage() {
             Write for us.
           </h2>
           <p className={styles.submitBody}>
-            Unprompted is open to all students who want to write about AI and Philosophy.
-            Whether you have an essay, a reflection or a provocation, we want to hear from you.
+            Unprompted is open to all students who want to write seriously about AI and philosophy.
+            Whether you want to examine ethics, question regulation, or probe what AI means for culture and society, we want to hear from you.
           </p>
           {/* TODO: replace siteConfig.journal.submissionsUrl with real form link */}
           <Button variant="solid" href={siteConfig.journal.submissionsUrl} external>

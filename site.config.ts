@@ -3,7 +3,7 @@ export const siteConfig = {
   fullName: "King's Artificial Intelligence and Philosophy Society",
   tagline: "Thinking about the machines we'll live with.",
   description:
-    'AIΦ is a student-led forum at King\'s College London contributing to the fields at the intersection of AI and Philosophy.',
+    'AIΦ is a student-led forum at King\'s College London at the intersection of artificial intelligence and philosophy. We question how we should think about this technology, what it means for our values, and how we ought to use it.',
 
   membershipUrl: 'https://www.kclsu.org/groups/activities/join/group/29593/',
 
@@ -30,7 +30,7 @@ export const siteConfig = {
     name: 'Unprompted',
     mark: '[UP]',
     currentVolume: 1,
-    currentDate: '11.26',
+    currentDate: '10.26',
     // TODO: Replace with real submissions URL
     submissionsUrl: 'TODO:https://forms.google.com/...',
   },
