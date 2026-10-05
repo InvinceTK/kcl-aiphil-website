@@ -35,7 +35,7 @@ const timelineMilestones = [
   {
     side: 'right' as const,
     label: 'Volume 1 — November 2026',
-    body: 'The first issue of Unprompted arrives.',
+    body: 'The first issue of Unprompted arrived.',
     image: '/images/other/reading-from-homer.jpg',
   },
 ]
@@ -80,57 +80,61 @@ export default function JournalPage() {
           </div>
         </div>
 
-        {/* Two-column: meta left, cover right */}
+        {/* Centered: meta → cover → button */}
         <div className={styles.currentGrid}>
           <div className={styles.currentMeta}>
             <SectionLabel>Current issue</SectionLabel>
             <h1 id="current-issue-heading" className={styles.issueTitle}>
-              Issue {currentIssue?.number}:<br />
-              {currentIssue?.title}
+              Issue {currentIssue?.number}: {currentIssue?.title}
             </h1>
-            <p className={styles.issueSub}>
-              {currentIssue?.released
-                ? 'Read the issue or download the PDF.'
-                : 'Volume 1 arriving November 2026.'}
-            </p>
-            {currentIssue?.released && currentIssue.pdf && (
-              <Button variant="outline" href={currentIssue.pdf} external>
-                Download PDF
-              </Button>
-            )}
+            <p className={styles.issueSub}>Arrived</p>
           </div>
 
-          {/* Cover */}
+          {/* Cover — centerpiece */}
           <div className={styles.coverWrap}>
-            {currentIssue?.released && currentIssue.cover ? (
+            {currentIssue?.pdf ? (
               <a
                 href={currentIssue.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.coverLink}
-                aria-label={`Open Issue ${currentIssue.number} PDF`}
+                aria-label="Read Unprompted Issue 1 — opens PDF"
               >
-                <Image
-                  src={currentIssue.cover}
-                  alt={`Unprompted Issue ${currentIssue.number}: ${currentIssue.title} cover`}
-                  fill
-                  className={styles.coverImg}
-                  sizes="(max-width: 768px) 90vw, 45vw"
-                />
-              </a>
-            ) : (
-              /* Cover preview — shown before release, no PDF link */
-              <div className={styles.coverPreview} aria-label="Unprompted Issue 1 cover — coming November 2026">
                 <Image
                   src="/images/journal/cover-current.jpeg"
                   alt="Unprompted Issue 1 cover"
                   fill
                   className={styles.coverImg}
-                  sizes="(max-width: 768px) 90vw, 45vw"
+                  sizes="(max-width: 768px) 80vw, 38vw"
+                  priority
+                />
+                <div className={styles.coverReadOverlay} aria-hidden="true">
+                  <span className={styles.coverReadLabel}>Read Issue 1</span>
+                </div>
+              </a>
+            ) : (
+              <div className={styles.coverPreview}>
+                <Image
+                  src="/images/journal/cover-current.jpeg"
+                  alt="Unprompted Issue 1 cover"
+                  fill
+                  className={styles.coverImg}
+                  sizes="(max-width: 768px) 80vw, 38vw"
+                  priority
                 />
               </div>
             )}
+            {currentIssue?.pdf && (
+              <p className={styles.coverHint} aria-hidden="true">Click to read ↗</p>
+            )}
           </div>
+
+          {/* Button fallback */}
+          {currentIssue?.pdf && (
+            <Button variant="outline" href={currentIssue.pdf} external>
+              Read Issue 1
+            </Button>
+          )}
         </div>
       </section>
 

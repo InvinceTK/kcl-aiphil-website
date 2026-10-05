@@ -93,7 +93,7 @@ export default function Home() {
             we&apos;ll live with.
           </h1>
           <div className={styles.heroCtas}>
-            <Button variant="solid" href="/join">Join now</Button>
+            <Button variant="solid" href={siteConfig.membershipUrl} external>Join now</Button>
             <Link href="/events" className={styles.heroLink}>
               See events →
             </Link>
@@ -251,7 +251,7 @@ export default function Home() {
           <p className={styles.joinTagline}>
             Become part of an award-winning King&apos;s College society focused on exploring the ethical development of AI.
           </p>
-          <Button variant="solid" href="/join">Join now</Button>
+          <Button variant="solid" href={siteConfig.membershipUrl} external>Join now</Button>
         </div>
       </section>
     </>

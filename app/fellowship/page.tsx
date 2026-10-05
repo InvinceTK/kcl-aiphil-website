@@ -78,13 +78,6 @@ export default function FellowshipPage() {
             </span>
           </div>
 
-          <Button
-            variant="solid"
-            href={interestUrl}
-            external
-          >
-            {isOpen ? 'Apply now' : 'Register interest'}
-          </Button>
         </div>
       </section>
 
@@ -172,9 +165,6 @@ export default function FellowshipPage() {
               ? 'Apply to join the AIΦ AI Safety Fellowship. Places are limited.'
               : 'The fellowship is in development. Register your interest and we\'ll let you know when applications open.'}
           </p>
-          <Button variant="solid" href={interestUrl} external>
-            {isOpen ? 'Apply now' : 'Register interest'}
-          </Button>
         </div>
       </section>
     </>

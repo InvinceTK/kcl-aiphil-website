@@ -56,13 +56,15 @@ export default function MobileMenu() {
                 ))}
               </ul>
             </nav>
-            <Link
-              href="/join"
+            <a
+              href={siteConfig.membershipUrl}
               className={styles.mobileJoin}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
               Join
-            </Link>
+            </a>
             <p className={styles.mobileSocials}>
               <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
               {' · '}

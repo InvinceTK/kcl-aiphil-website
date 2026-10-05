@@ -5,8 +5,7 @@ export const siteConfig = {
   description:
     'AIΦ is a student-led forum at King\'s College London contributing to the fields at the intersection of AI and Philosophy.',
 
-  // TODO: Replace with real membership URL
-  membershipUrl: 'TODO:https://kclsu.org/organisations/aiphi',
+  membershipUrl: 'https://www.kclsu.org/groups/activities/join/group/29593/',
 
   socials: {
     // TODO: Replace with real handles
@@ -24,8 +23,7 @@ export const siteConfig = {
   fellowship: {
     // 'development' | 'open'
     status: 'development' as 'development' | 'open',
-    // TODO: Replace with real interest form URL
-    interestUrl: 'TODO:https://forms.google.com/...',
+    interestUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdX36A7gnQWqGGozze4i8FThTRTbdeKw9T3sF_N0LDR1qPUXg/viewform',
   },
 
   journal: {

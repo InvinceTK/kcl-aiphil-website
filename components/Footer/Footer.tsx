@@ -4,12 +4,12 @@ import { siteConfig } from '@/site.config'
 import styles from './Footer.module.css'
 
 const navLinks = [
-  { href: '/',           label: 'Home' },
-  { href: '/about',      label: 'About' },
-  { href: '/events',     label: 'Events' },
-  { href: '/fellowship', label: 'Fellowship' },
-  { href: '/journal',    label: 'Journal' },
-  { href: '/join',       label: 'Join' },
+  { href: '/',           label: 'Home',       external: false },
+  { href: '/about',      label: 'About',      external: false },
+  { href: '/events',     label: 'Events',     external: false },
+  { href: '/fellowship', label: 'Fellowship', external: false },
+  { href: '/journal',    label: 'Journal',    external: false },
+  { href: 'https://www.kclsu.org/groups/activities/join/group/29593/', label: 'Join', external: true },
 ]
 
 export default function Footer() {
@@ -32,9 +32,12 @@ export default function Footer() {
 
         <nav className={styles.nav} aria-label="Footer navigation">
           <ul role="list" className={styles.navList}>
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ href, label, external }) => (
               <li key={href}>
-                <Link href={href} className={styles.navLink}>{label}</Link>
+                {external
+                  ? <a href={href} className={styles.navLink} target="_blank" rel="noopener noreferrer">{label}</a>
+                  : <Link href={href} className={styles.navLink}>{label}</Link>
+                }
               </li>
             ))}
           </ul>

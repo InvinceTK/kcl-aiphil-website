@@ -71,25 +71,27 @@
   max-width: none;
 }
 
-/* Two-column grid: meta | cover */
+/* Centered column: meta → cover → button */
 .currentGrid {
   flex: 1;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
   z-index: 1;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-12);
-  align-items: center;
+  gap: var(--space-8);
   max-width: calc(var(--max-width) + var(--outer-margin) * 2);
   margin: 0 auto;
-  padding: var(--space-12) var(--outer-margin);
+  padding: var(--space-10) var(--outer-margin) var(--space-12);
   width: 100%;
 }
 
 .currentMeta {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .issueTitle {
@@ -114,26 +116,80 @@
 /* Cover area */
 .coverWrap {
   position: relative;
-  aspect-ratio: 2 / 3;
-  width: 100%;
-  max-width: 440px;
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  width: clamp(200px, 38vw, 420px);
 }
 
 .coverLink {
   display: block;
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  transition: box-shadow var(--transition-medium), transform var(--transition-medium);
+}
+
+.coverLink:hover {
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.8);
+  transform: translateY(-4px);
+}
+
+.coverLink:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
 }
 
 .coverImg {
   object-fit: cover;
 }
 
-/* Cover preview (unreleased — image shown, no PDF link) */
-.coverPreview {
+.coverReadOverlay {
   position: absolute;
   inset: 0;
+  background-color: rgba(14, 14, 14, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.coverLink:hover .coverReadOverlay {
+  opacity: 1;
+}
+
+.coverReadLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 700;
+  font-variation-settings: 'wdth' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--paper);
+  border: 1px solid var(--paper);
+  padding: var(--space-2) var(--space-5);
+}
+
+.coverHint {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--grey-500);
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* Cover preview (no PDF link) */
+.coverPreview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* ── Cover placeholder — echoes the journal cover ─────── */
@@ -552,14 +608,8 @@
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .currentGrid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-
   .coverWrap {
-    max-width: 300px;
-    margin: 0 auto;
+    width: clamp(180px, 70vw, 300px);
   }
 
   .timelineEntry {

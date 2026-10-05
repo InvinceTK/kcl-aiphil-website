@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import MobileMenu from './MobileMenu'
+import { siteConfig } from '@/site.config'
 import styles from './SiteHeader.module.css'
 
 const navLinks = [
@@ -37,9 +38,9 @@ export default function SiteHeader({ theme = 'ink' }: SiteHeaderProps) {
               </li>
             ))}
           </ul>
-          <Link href="/join" className={styles.joinBtn}>
+          <a href={siteConfig.membershipUrl} className={styles.joinBtn} target="_blank" rel="noopener noreferrer">
             Join
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile menu (client component) */}
